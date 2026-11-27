@@ -1,0 +1,24 @@
+2026-11-26 12:22:02,363 | INFO    | ======================================================================
+2026-11-26 12:22:02,363 | INFO    | ETL batch 4 started  (INCREMENTAL)
+2026-11-26 12:22:02,363 | INFO    | EXTRACT  MySQL lab tests changed since: 2026-11-22 16:38:36
+2026-11-26 12:22:02,509 | INFO    | EXTRACT  MongoDB equipment logs since: 2026-10-31 16:52:00
+2026-11-26 12:22:02,693 | INFO    | EXTRACT  MySQL lab tests            0
+2026-11-26 12:22:02,693 | INFO    | EXTRACT  MongoDB sample docs        2473
+2026-11-26 12:22:02,693 | INFO    | EXTRACT  MongoDB equipment events   0
+2026-11-26 12:22:02,693 | INFO    | EXTRACT  Excel fee rows             unchanged - skipped
+2026-11-26 12:22:02,693 | INFO    | EXTRACT  CSV staffing rows          unchanged - skipped
+2026-11-26 12:22:02,750 | INFO    | STAGING  raw rows copied into the staging schema
+2026-11-26 12:22:02,776 | INFO    | TRANSFORM data-quality issues found and handled: 0  {}
+2026-11-26 12:22:02,874 | INFO    | LOAD     dimension rows upserted    1279
+2026-11-26 12:22:02,874 | INFO    | LOAD     fee schedule rows          0
+2026-11-26 12:22:02,874 | INFO    | LOAD     staffing rows              0
+2026-11-26 12:22:02,874 | INFO    | LOAD     instrument events          0
+2026-11-26 12:22:02,874 | INFO    | LOAD     lab test facts             0
+2026-11-26 12:22:02,887 | INFO    | LOAD     materialized view dw.mv_daily_lab_kpis refreshed
+2026-11-26 12:22:02,912 | INFO    | CHECK    PASS  MySQL order_tests = warehouse fact_lab_test      source=4826 target=4826
+2026-11-26 12:22:02,912 | INFO    | CHECK    PASS  Extracted this batch = facts upserted            source=0 target=0
+2026-11-26 12:22:02,912 | INFO    | CHECK    PASS  MongoDB equipment_logs = fact_instrument_event   source=2950 target=2950
+2026-11-26 12:22:02,912 | INFO    | CHECK    PASS  MySQL patients = dim_patient                     source=1202 target=1202
+2026-11-26 12:22:02,913 | INFO    | CHECK    PASS  Clean fee rows = ref_fee_schedule                source=84 target=84
+2026-11-26 12:22:02,916 | INFO    | ETL batch 4 finished: SUCCESS in 0.6 s
+2026-11-26 12:22:02,916 | INFO    | Log file: logs/etl_20261126_122202.log
