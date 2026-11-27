@@ -10,6 +10,32 @@ local Llama model, with safety checks, source citations and an audit log.
 > All data is **synthetic and de-identified** (no patient names). It contains a planted, documented
 > incident: chemistry analyzer **CHEM-02** failed in Jul–Sep 2026 and was repaired on 30 Sep 2026.
 
+### Screenshots
+
+**Home: the lab's story at a glance.** Key numbers, what happened, and the slow period caused by CHEM-02.
+
+![LabLens home page](screenshots/home.png)
+
+**Performance: warehouse-powered dashboard with filters.**
+
+![LabLens performance dashboard](screenshots/performance.png)
+
+**Analyzers: machine-learning warnings (Isolation Forest).** All 14 known CHEM-02 problem weeks were flagged.
+
+![LabLens analyzer warnings](screenshots/analyzers.png)
+
+A slide deck with the full project story is in [`docs/LabLens-Presentation.pdf`](docs/LabLens-Presentation.pdf).
+
+### Key results
+
+| Area | Result |
+|---|---|
+| ETL data quality | 262 data problems fixed with 8 cleaning rules; 4,826 tests in MySQL = 4,826 in the warehouse; 0 duplicates after 7 loads |
+| Warehouse performance | Query time cut from 5.1 ms to 2.1 ms |
+| Late-result model (Random Forest) | ROC-AUC 0.90, versus 0.87 for a logistic-regression baseline |
+| Analyzer warnings (Isolation Forest) | 14 of 14 known problem weeks caught, with no labels needed |
+| Testing | 58 of 60 automated tests passed; 19 of 19 AI safety tests passed |
+
 ---
 
 ## 1. Architecture
@@ -251,6 +277,6 @@ Results are saved to `tests/test_results.md` and `tests/test_results.csv`; earli
 - The late-result risk is a ranking score, not a calibrated probability.
 - No user accounts: LabLens runs locally for one user.
 
-## 13. Submission note
+## 13. Repository note
 
 This repository excludes `.venv/`, `__pycache__/` and `.env` (secrets). Use `.env.example` to configure.
