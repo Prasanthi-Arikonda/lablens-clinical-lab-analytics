@@ -1,0 +1,11 @@
+# LabLens theme - "periwinkle-leaning cornflower"
+[theme]
+base = "light"
+primaryColor = "#4E67D3"              # deep periwinkle: buttons, sliders, links (readable on white)
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#EEF1FC"  # soft periwinkle tint: sidebar, input boxes
+textColor = "#1E2A4A"                 # dark navy ink
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
