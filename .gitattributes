@@ -1,0 +1,2 @@
+# Count the notebook as documentation, so the language bar shows the code's real language (Python)
+*.ipynb linguist-documentation
